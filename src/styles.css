@@ -1,0 +1,136 @@
+:root {
+  --background-colour: #ffd700;
+  --shadow-colour: #c7a814;
+  --search-container-bg-colour: #ffffff;
+  --button-hover-colour: #1a1a1a;
+  --outline-focus-colour: #3b82f6;
+
+  --general-black-colour: #262626;
+  --general-white-colour: #f9f9f9;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2.4rem;
+  background-color: var(--background-colour);
+  font-family: "Roboto", sans-serif;
+}
+
+/* ##### Top Navigation Styling ##### */
+
+#top-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  gap: 2.4rem;
+}
+
+h1 {
+  font-size: 5.2rem;
+  font-weight: bold;
+  font-family: "Bebas Neue", sans-serif;
+  line-height: 1;
+  margin-bottom: -0.6rem;
+  color: var(--general-black-colour);
+  text-decoration: 4px underline dotted var(--shadow-colour);
+  text-underline-offset: 4px;
+}
+
+#search-container {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--general-black-colour);
+  background-color: var(--search-container-bg-colour);
+  box-shadow: 4px 4px 0px 0px var(--shadow-colour);
+}
+
+#search-container:focus-within:not(:has(#fetch-btn:focus)) {
+  outline: 4px solid var(--outline-focus-colour);
+}
+
+svg {
+  height: 24px;
+  width: 24px;
+  display: inline-block;
+  margin-left: 1rem;
+  background-color: transparent;
+}
+
+input {
+  flex: 1;
+  flex-shrink: 0;
+  min-width: 120px;
+  padding: 1.6rem 1rem;
+  border: none;
+  font-size: 1.6rem;
+  background-color: transparent;
+  font-family: inherit;
+}
+
+input:focus {
+  outline: none;
+}
+
+#fetch-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.2rem;
+  cursor: pointer;
+  border: none;
+  font-size: 1.6rem;
+  margin-right: 1rem;
+  background-color: var(--general-black-colour);
+  color: var(--general-white-colour);
+  font-weight: bold;
+  font-family: inherit;
+}
+
+#fetch-btn:hover {
+  background-color: var(--button-hover-colour);
+  text-decoration: 2px underline dotted var(--general-white-colour);
+  text-underline-offset: 2px;
+}
+
+#fetch-btn:focus {
+  outline: 4px solid var(--outline-focus-colour);
+}
+
+/* ##### Responsive Styling ##### */
+
+@media (max-width: 600px) {
+  body {
+    padding: 1.6rem;
+  }
+
+  #top-nav {
+    flex-direction: column;
+    gap: 1.2rem;
+    max-width: 100%;
+  }
+
+  #search-container {
+    width: 100%;
+  }
+}
