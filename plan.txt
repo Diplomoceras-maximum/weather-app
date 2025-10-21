@@ -1,0 +1,36 @@
+##################################################
+Overview
+##################################################
+
+1. Build a weather forecast web app using the Visual Crossing Weather API. 
+2. The user can input a location to retrieve current weather data and display it on the page. 
+3. The app should allow toggling between Celsius and Fahrenheit. 
+4. Styling should change dynamically based on weather conditions.
+5. Optionally include GIFs using the Giphy API.
+
+##################################################
+Requirements
+##################################################
+
+1. Input field to enter a location + button to fetch.
+2. Fetch weather data from API based on location.
+3. Display current weather, temperature, conditions, location details, etc.
+4. Toggle temperature button between Celsius and Fahrenheit.
+5. Dynamic visuals based on weather (could be background colour, images, GIFs, etc).
+Optional: loading indicator during API calls.
+
+##################################################
+Data Flow
+##################################################
+
+1. User enters a location in the search bar, and clicks the submit button.
+2. Form submission triggers weather fetch request.
+3. App calls Visual Crossing Weather API using fetch/async/await.
+4. API returns JSON data.
+5. Necessary data is displayed in the DOM.
+6. User can toggle between units (C and F), which updates the display.
+7. Optional: Weather condition triggers dynamic styling.
+8. Errors / loading state are shown in UI.
+
+
+
