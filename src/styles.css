@@ -27,6 +27,7 @@ body {
   min-height: 100vh;
   padding: 2.4rem;
   background-color: var(--background-colour);
+  color: var(--general-black-colour);
   font-family: "Roboto", sans-serif;
 }
 
@@ -113,9 +114,33 @@ input:focus {
   text-underline-offset: 2px;
 }
 
-#fetch-btn:focus {
+#fetch-btn:focus,
+#unit-toggle-btn:focus {
   outline: 4px solid var(--outline-focus-colour);
 }
+
+#unit-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 2px solid var(--general-black-colour);
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: var(--general-black-colour);
+  color: var(--general-white-colour);
+  box-shadow: 4px 4px 0px 0px var(--shadow-colour);
+  height: 55px;
+  width: 55px;
+}
+
+#unit-toggle-btn:hover {
+  background-color: var(--button-hover-colour);
+  text-decoration: 2px underline dotted var(--general-white-colour);
+  text-underline-offset: 2px;
+}
+
+/* Main App Container & Card Styling */
 
 /* ##### Responsive Styling ##### */
 
