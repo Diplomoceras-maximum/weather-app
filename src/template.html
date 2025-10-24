@@ -41,6 +41,95 @@
         />
         <button id="fetch-btn">Search</button>
       </div>
+      <button id="unit-toggle-btn">°C</button>
     </header>
+    <main id="app-container">
+      <!-- Message Box (Error handling) -->
+      <div id="message-box" class="hidden"></div>
+      <!-- Main Info Section -->
+      <div id="main-info-card" class="weather-card">
+        <!-- Date/Time & Location -->
+        <section id="demographic-info-row">
+          <p id="current-datetime">00/00/0000 | 00:00 AM</p>
+          <h2 id="current-location">LOCATION</h2>
+        </section>
+        <!-- Temperature & High/Low -->
+        <section id="temperature-row">
+          <p id="current-temp">00°C</p>
+          <div id="high-low">
+            <div class="temp-summary">
+              <span class="temp-label">HIGH: </span>
+              <span id="high-temp" class="temp-value">00°C</span>
+            </div>
+            <div class="temp-summary">
+              <span class="temp-label">LOW: </span>
+              <span id="low-temp" class="temp-value">00°C</span>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- Secondary Info Section -->
+      <div id="secondary-info-section">
+        <!-- Precipitation Chance -->
+        <section id="precip-card" class="secondary-card">
+          <h3>PRECIPITATION CHANCE</h3>
+          <p id="precip-chance" class="value-display">00%</p>
+          <p id="precip-type" class="detail-label">RAIN</p>
+        </section>
+        <!-- Feels Like / Condition / Icon -->
+        <section id="feels-like-card" class="secondary-card wide-card">
+          <div id="weather-info">
+            <h3>FEELS LIKE</h3>
+            <p id="feels-like-temp" class="value-display">00°C</p>
+            <p id="condition-text" class="detail-label">CONDITION</p>
+          </div>
+          <div id="weather-icon">
+            <span id="condition-icon" class="icon-large"></span>
+          </div>
+        </section>
+        <!-- Wind -->
+        <section id="wind-card" class="secondary-card">
+          <h3>WIND</h3>
+          <p id="wind-speed" class="value-display">00 kmh</p>
+        </section>
+        <!-- Humidity -->
+        <section id="humidity-card" class="secondary-card">
+          <h3>HUMIDITY</h3>
+          <p id="humidity" class="value-display">00%</p>
+        </section>
+        <!-- Clouds -->
+        <section id="cloud-card" class="secondary-card">
+          <h3>CLOUD COVER</h3>
+          <p id="cloudcover" class="value-display">00%</p>
+        </section>
+        <!-- Visibility -->
+        <section id="visibility-card" class="secondary-card">
+          <h3>VISIBILITY</h3>
+          <p id="visibility" class="value-display">00 km</p>
+        </section>
+        <!-- Light/Dark -->
+        <section id="sub-card" class="secondary-card">
+          <h3>SUNRISE/SUNSET</h3>
+          <div class="sun-time-row">
+            <span>SUNRISE: </span>
+            <span id="sunrise" class="time-display">00:00</span>
+          </div>
+          <div class="sun-time-row">
+            <span>SUNSET: </span>
+            <span id="sunset" class="time-display">00:00</span>
+          </div>
+        </section>
+      </div>
+      <!-- 5 day Forecast -->
+      <div id="forecast-container">
+        <section id="title-row">
+          <h2>5-DAY FORECAST</h2>
+          <p></p>
+        </section>
+        <section id="forecast-list">
+          <!--  -->
+        </section>
+      </div>
+    </main>
   </body>
 </html>
