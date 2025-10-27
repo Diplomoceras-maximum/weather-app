@@ -46,6 +46,7 @@ body {
 }
 
 h1 {
+  display: flex;
   font-size: 5.2rem;
   font-weight: bold;
   font-family: "Bebas Neue", sans-serif;
@@ -64,7 +65,52 @@ h1 {
   width: 100%;
 }
 
+#message-box {
+  position: absolute;
+  top: 100%;
+  right: -2px;
+  margin-top: -7px;
+  z-index: 100;
+  padding: 10px 15px;
+  max-width: 300px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: left;
+  border: 2px solid var(--general-black-colour);
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 4px 4px 0px 0px var(--shadow-colour);
+}
+
+#message-box:not(.hidden) {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Error specific style */
+#message-box.error {
+  background-color: #f44336;
+  color: var(--general-white-colour);
+}
+
+/* Upwards arrow */
+#message-box.error::before {
+  content: "";
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  top: -8px;
+  right: 40px;
+  transform: rotate(45deg);
+  border: 2px solid var(--general-black-colour);
+  border-bottom: transparent;
+  border-right: transparent;
+  background-color: #f44336;
+}
+
 #search-container {
+  position: relative;
   display: flex;
   flex: 1;
   flex-direction: row;
@@ -89,8 +135,6 @@ svg {
 
 input {
   flex: 1;
-  flex-shrink: 0;
-  min-width: 120px;
   padding: 1.6rem 1rem;
   border: none;
   font-size: 1.6rem;
@@ -161,7 +205,7 @@ input:focus {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 3.2rem;
+  margin-top: 4rem;
 }
 
 #main-info-card {
@@ -188,10 +232,18 @@ input:focus {
 }
 
 .text-small {
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-weight: 700;
   text-transform: uppercase;
   color: var(--text-detail-colour);
+}
+
+.last-recorded {
+  display: block;
+  font-size: 1.2rem;
+  color: var(--text-detail-colour);
+  text-transform: none;
+  margin-bottom: 1.2rem;
 }
 
 /* Main Info Card */
@@ -304,13 +356,64 @@ input:focus {
   margin-bottom: 2rem;
 }
 
-#forecast-list {
-  display: inline-flex;
-  gap: 1.6rem;
-  padding: 1.2rem 0;
+#title-row {
+  padding: 2rem 0;
 }
 
-/* ... */
+#title-row h2 {
+  font-size: 4.8rem;
+  font-weight: bold;
+  font-family: "Bebas Neue", sans-serif;
+  line-height: 1;
+  margin-bottom: -0.6rem;
+  color: var(--general-black-colour);
+  text-decoration: 4px underline dotted var(--shadow-colour);
+  text-underline-offset: 4px;
+}
+
+#forecast-list {
+  display: inline-flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+  padding: 1.2rem 0;
+  width: 100%;
+}
+
+/* Individual Forecast Card */
+.forecast-day {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  background-color: var(--general-white-colour);
+  border: 4px solid var(--general-black-colour);
+  box-shadow: 8px 8px 0px 0px var(--shadow-colour);
+  text-align: center;
+  padding: 2rem;
+  min-width: 135px;
+}
+
+/* Forecast Date */
+.forecast-date {
+  font-size: 2.4rem;
+  font-weight: 300;
+  color: var(--text-detail-colour);
+  font-family: "Bebas Neue", sans-serif;
+  text-decoration: underline 4px dotted var(--text-detail-colour);
+  text-underline-offset: 4px;
+}
+
+/* Forecast Icon */
+.forecast-icon {
+  font-size: 48px;
+}
+
+/* Forecast Temperature */
+.forecast-temp {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--general-black-colour);
+}
 
 /* ##### Responsive Styling ##### */
 
@@ -326,7 +429,6 @@ input:focus {
 
   #right-controls {
     width: 100%;
-    flex-wrap: wrap;
   }
 
   .text-huge {
@@ -340,15 +442,20 @@ input:focus {
 }
 
 @media (max-width: 450px) {
+  #right-controls {
+    gap: 0.8rem;
+    justify-content: center;
+  }
+
+  input {
+    width: 100%;
+  }
+
   #secondary-info-section {
     grid-template-columns: 1fr;
   }
 
   #feels-like-card {
     grid-column: span 1;
-  }
-
-  #unit-toggle-btn {
-    width: 100%;
   }
 }

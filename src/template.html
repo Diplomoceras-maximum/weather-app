@@ -16,6 +16,8 @@
       <h1>Weather</h1>
       <div id="right-controls">
         <div id="search-container">
+          <!-- Message Box (Error handling) -->
+          <div id="message-box" class="hidden"></div>
           <svg
             viewBox="0 0 24 24"
             fill="none"
@@ -50,26 +52,24 @@
       </div>
     </header>
     <main id="app-container">
-      <!-- Message Box (Error handling) -->
-      <div id="message-box" class="hidden"></div>
       <!-- Main Info Section -->
       <div id="main-info-card" class="weather-card">
         <!-- Date/Time & Location -->
         <section id="demographic-info-row">
-          <p id="current-datetime" class="text-small">00/00/0000 | 00:00 AM</p>
+          <p id="current-datetime" class="text-small">00/00/0000 | 00:00</p>
           <h2 id="current-location" class="text-large">LOCATION</h2>
         </section>
         <!-- Temperature & High/Low -->
         <section id="temperature-row">
-          <p id="current-temp" class="text-huge">00°C</p>
+          <p id="current-temp" class="text-huge">00</p>
           <div id="high-low">
             <div class="temp-summary">
               <span class="temp-label text-small">HIGH: </span>
-              <span id="high-temp" class="temp-value">00°C</span>
+              <span id="high-temp" class="temp-value">00</span>
             </div>
             <div class="temp-summary">
               <span class="temp-label text-small">LOW: </span>
-              <span id="low-temp" class="temp-value">00°C</span>
+              <span id="low-temp" class="temp-value">00</span>
             </div>
           </div>
         </section>
@@ -78,40 +78,40 @@
       <div id="secondary-info-section">
         <!-- Precipitation Chance -->
         <section id="precip-card" class="secondary-card">
-          <h3>PRECIPITATION CHANCE</h3>
-          <p id="precip-chance" class="value-display">00%</p>
-          <p id="precip-type" class="detail-label">RAIN</p>
+          <h3>PRECIPITATION</h3>
+          <p id="precip-chance" class="value-display">00</p>
+          <p id="precip-type" class="detail-label">CONDITION</p>
         </section>
         <!-- Feels Like / Condition / Icon -->
         <section id="feels-like-card" class="secondary-card wide-card">
           <div id="weather-info">
             <h3>FEELS LIKE</h3>
-            <p id="feels-like-temp" class="value-display">00°C</p>
+            <p id="feels-like-temp" class="value-display">00</p>
             <p id="condition-text" class="detail-label">CONDITION</p>
           </div>
           <div id="weather-icon">
-            <span id="condition-icon" class="icon-large"></span>
+            <span id="condition-icon" class="icon-large">❓</span>
           </div>
         </section>
         <!-- Wind -->
         <section id="wind-card" class="secondary-card">
           <h3>WIND</h3>
-          <p id="wind-speed" class="value-display">00 kmh</p>
+          <p id="wind-speed" class="value-display">00</p>
         </section>
         <!-- Humidity -->
         <section id="humidity-card" class="secondary-card">
           <h3>HUMIDITY</h3>
-          <p id="humidity" class="value-display">00%</p>
+          <p id="humidity" class="value-display">00</p>
         </section>
         <!-- Clouds -->
         <section id="cloud-card" class="secondary-card">
           <h3>CLOUD COVER</h3>
-          <p id="cloudcover" class="value-display">00%</p>
+          <p id="cloudcover" class="value-display">00</p>
         </section>
         <!-- Visibility -->
         <section id="visibility-card" class="secondary-card">
           <h3>VISIBILITY</h3>
-          <p id="visibility" class="value-display">00 km</p>
+          <p id="visibility" class="value-display">00</p>
         </section>
         <!-- Light/Dark -->
         <section id="sub-card" class="secondary-card">
