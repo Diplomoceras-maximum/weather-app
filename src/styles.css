@@ -1,3 +1,5 @@
+/* ##### General Styling ##### */
+
 :root {
   --background-colour: #ffd700;
   --shadow-colour: #c7a814;
@@ -5,6 +7,7 @@
   --button-hover-colour: #1a1a1a;
   --outline-focus-colour: #3b82f6;
   --text-detail-colour: #555;
+  --error-colour: #f44336;
 
   --general-black-colour: #262626;
   --general-white-colour: #f9f9f9;
@@ -27,6 +30,15 @@ body {
   align-items: center;
   min-height: 100vh;
   padding: 2.4rem;
+  background: repeating-linear-gradient(
+    to right,
+    var(--general-black-colour) 0,
+    var(--general-black-colour) calc(50% - 750px),
+    transparent calc(50% - 750px),
+    transparent calc(50% + 750px),
+    var(--general-black-colour) calc(50% + 750px),
+    var(--general-black-colour) 100%
+  );
   background-color: var(--background-colour);
   color: var(--general-black-colour);
   font-family: "Roboto", sans-serif;
@@ -45,6 +57,7 @@ body {
   gap: 2.4rem;
 }
 
+/* Weather Logo */
 h1 {
   display: flex;
   font-size: 5.2rem;
@@ -57,6 +70,7 @@ h1 {
   text-underline-offset: 4px;
 }
 
+/* Searchbar + unit button */
 #right-controls {
   display: flex;
   align-items: center;
@@ -65,6 +79,7 @@ h1 {
   width: 100%;
 }
 
+/* Error message */
 #message-box {
   position: absolute;
   top: 100%;
@@ -74,7 +89,7 @@ h1 {
   padding: 10px 15px;
   max-width: 300px;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: bold;
   text-transform: uppercase;
   text-align: left;
   border: 2px solid var(--general-black-colour);
@@ -83,6 +98,7 @@ h1 {
   box-shadow: 4px 4px 0px 0px var(--shadow-colour);
 }
 
+/* Display message box */
 #message-box:not(.hidden) {
   opacity: 1;
   visibility: visible;
@@ -90,7 +106,7 @@ h1 {
 
 /* Error specific style */
 #message-box.error {
-  background-color: #f44336;
+  background-color: var(--error-colour);
   color: var(--general-white-colour);
 }
 
@@ -106,9 +122,10 @@ h1 {
   border: 2px solid var(--general-black-colour);
   border-bottom: transparent;
   border-right: transparent;
-  background-color: #f44336;
+  background-color: var(--error-colour);
 }
 
+/* Search bar container */
 #search-container {
   position: relative;
   display: flex;
@@ -125,6 +142,7 @@ h1 {
   outline: 4px solid var(--outline-focus-colour);
 }
 
+/* Search icon */
 svg {
   height: 24px;
   width: 24px;
@@ -133,6 +151,7 @@ svg {
   background-color: transparent;
 }
 
+/* Input for searching */
 input {
   flex: 1;
   padding: 1.6rem 1rem;
@@ -146,6 +165,7 @@ input:focus {
   outline: none;
 }
 
+/* Search button */
 #fetch-btn {
   display: flex;
   flex-direction: row;
@@ -174,6 +194,7 @@ input:focus {
   outline: 4px solid var(--outline-focus-colour);
 }
 
+/* Unit toggle button */
 #unit-toggle-btn {
   display: flex;
   align-items: center;
@@ -197,8 +218,9 @@ input:focus {
   text-underline-offset: 2px;
 }
 
-/* Main App Container & Card Styling */
+/* ##### Main App Container & Card Styling ##### */
 
+/* Main app container */
 #app-container {
   width: 100%;
   max-width: 800px;
@@ -208,6 +230,7 @@ input:focus {
   margin-top: 4rem;
 }
 
+/* Main weather card */
 #main-info-card {
   width: 100%;
   padding: 3.2rem;
@@ -218,12 +241,14 @@ input:focus {
   margin-bottom: 3.2rem;
 }
 
+/* Current temp */
 .text-huge {
   font-family: "Bebas Neue", sans-serif;
   font-size: 18rem;
   line-height: 1;
 }
 
+/* Location name */
 .text-large {
   font-family: "Bebas Neue", sans-serif;
   font-size: 4.8rem;
@@ -231,6 +256,7 @@ input:focus {
   text-transform: uppercase;
 }
 
+/* High/Low headings, date/time main card */
 .text-small {
   font-size: 2rem;
   font-weight: 700;
@@ -238,6 +264,7 @@ input:focus {
   color: var(--text-detail-colour);
 }
 
+/* Last recorded message under date/time */
 .last-recorded {
   display: block;
   font-size: 1.2rem;
@@ -251,24 +278,28 @@ input:focus {
   margin-bottom: 2rem;
 }
 
+/* Container for high/low */
 #temperature-row {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* High/low div */
 #high-low {
   display: flex;
   gap: 2rem;
   margin-top: 2rem;
 }
 
+/* High/low row */
 .temp-summary {
   display: flex;
   align-items: baseline;
   gap: 0.4rem;
 }
 
+/* High/low temperature text */
 .temp-summary .temp-value {
   font-size: 2.4rem;
   font-weight: bold;
@@ -284,12 +315,17 @@ input:focus {
   margin-bottom: 3.2rem;
 }
 
+/* Smaller cards in secondary weather section */
 .secondary-card {
   padding: 1.6rem;
   border: 4px solid var(--general-black-colour);
   background-color: var(--general-white-colour);
   box-shadow: 8px 8px 0px 0px var(--shadow-colour);
   text-align: center;
+}
+
+.secondary-card:last-of-type {
+  grid-column: span 2;
 }
 
 .secondary-card h3 {
@@ -304,6 +340,7 @@ input:focus {
   text-underline-offset: 4px;
 }
 
+/* Text of numerical weather data */
 .value-display {
   font-size: 6rem;
   font-family: "Bebas Neue", sans-serif;
@@ -311,6 +348,7 @@ input:focus {
   margin-bottom: 0.4rem;
 }
 
+/* Text for smaller details (precipitation + feels like) */
 .detail-label {
   font-size: 1.2rem;
   font-weight: 700;
@@ -318,6 +356,7 @@ input:focus {
   text-transform: uppercase;
 }
 
+/* Feels like card */
 #feels-like-card {
   display: flex;
   flex-direction: row;
@@ -327,6 +366,7 @@ input:focus {
   grid-column: span 2;
 }
 
+/* Weather icon */
 #weather-icon {
   flex-shrink: 0;
 }
@@ -337,6 +377,7 @@ input:focus {
   line-height: 1;
 }
 
+/* Sunset/sunrise data row */
 .sun-time-row {
   display: flex;
   justify-content: space-between;
@@ -350,12 +391,16 @@ input:focus {
   border-bottom: 2px solid #ddd;
 }
 
+/* ##### 5-Day Forecast Section ##### */
+
+/* Forecast container */
 #forecast-container {
   width: 100%;
   padding-bottom: 1.2rem;
   margin-bottom: 2rem;
 }
 
+/* Title container */
 #title-row {
   padding: 2rem 0;
 }
@@ -371,6 +416,7 @@ input:focus {
   text-underline-offset: 4px;
 }
 
+/* List of forecast cards */
 #forecast-list {
   display: inline-flex;
   justify-content: space-evenly;
@@ -380,7 +426,7 @@ input:focus {
   width: 100%;
 }
 
-/* Individual Forecast Card */
+/* Individual forecast card */
 .forecast-day {
   display: flex;
   flex-direction: column;
@@ -393,7 +439,7 @@ input:focus {
   min-width: 135px;
 }
 
-/* Forecast Date */
+/* Forecast date */
 .forecast-date {
   font-size: 2.4rem;
   font-weight: 300;
@@ -403,16 +449,33 @@ input:focus {
   text-underline-offset: 4px;
 }
 
-/* Forecast Icon */
+/* Forecast icon */
 .forecast-icon {
   font-size: 48px;
 }
 
-/* Forecast Temperature */
+/* Forecast temperature */
 .forecast-temp {
   font-size: 2rem;
   font-weight: bold;
   color: var(--general-black-colour);
+}
+
+/* Initial placeholder for forecast information */
+#forecast-placeholder {
+  border: 4px solid var(--general-black-colour);
+  background-color: var(--general-white-colour);
+  padding: 2rem 1.6rem;
+}
+
+#forecast-placeholder span {
+  font-size: 8rem;
+}
+
+#forecast-placeholder p {
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 /* ##### Responsive Styling ##### */
@@ -438,6 +501,10 @@ input:focus {
   #secondary-info-section {
     grid-template-columns: repeat(2, 1fr);
     grid-auto-flow: row dense;
+  }
+
+  .secondary-card:last-of-type {
+    grid-column: span 1;
   }
 }
 
