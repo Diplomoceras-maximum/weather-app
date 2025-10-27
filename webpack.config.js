@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
+const webpack = require("webpack");
 
 module.exports = {
   mode: "development",
@@ -17,6 +18,9 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/template.html",
+    }),
+    new webpack.DefinePlugin({
+      "process.env.API_KEY": JSON.stringify("YWLS6K9TT2PAHNNRES8R9N792"),
     }),
   ],
   module: {
